@@ -1,0 +1,4 @@
+pandas==1.2.4
+transformers==4.3.3
+webdataset==0.1.40
+torch-scatter
