@@ -14,10 +14,14 @@ Instructions for creating or organizing the artifacts of a given project.
 ### Docker
 ```bash
 
-docker build -t ${PROJECT_NAME}_image -f artifact/setup/dockerfile .
+docker build -t rep-rb_image -f artifact/setup/dockerfile .
+
+docker save --output rep-rb_image.tar rep-rb_image
+
+split -b 5G rep-rb_image.tar rep-rb_image-part-
 
 
-docker run --rm --ipc=host --gpus all -v ${PWD}:/workzspace -it ${PROJECT_NAME}_image bash
+
 
 # inside the container, run the required commands
 
